@@ -3,16 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>GA4 Sandbox Test</title>
-  <!-- Replace with your own GA4 MEASUREMENT ID -->
+  <!-- GA4 Tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0EPL44E3Z"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
-     gtag('config', 'G-M0EPL44E3Z', { 'debug_mode': true });
-</script>
-
-  </script>
+    gtag('config', 'G-M0EPL44E3Z', { 'debug_mode': true });
+  </script> <!-- ✅ Only ONE closing script tag -->
 </head>
 <body>
   <h1>My GA4 Test Store</h1>
