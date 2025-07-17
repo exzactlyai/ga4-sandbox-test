@@ -8,23 +8,25 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
+
     gtag('js', new Date());
-    gtag('config', 'G-M0EPL44E3Z', { 'debug_mode': true });
-  </script> <!-- ✅ Only ONE closing script tag -->
+    gtag('config', 'G-M0EPL44E3Z', { 'debug_mode': true }); // This sets general debug mode
+  </script>
 </head>
 <body>
   <h1>My GA4 Test Store</h1>
 
-  <button onclick="gtag('event', 'view_item', { item_name: 'Test Product A' });">
+  <button onclick="gtag('event', 'view_item', { item_name: 'Test Product A', debug_mode: true });">
     View Product A
   </button>
 
-  <button onclick="gtag('event', 'add_to_cart', { item_name: 'Test Product A' });">
+  <button onclick="gtag('event', 'add_to_cart', { item_name: 'Test Product A', debug_mode: true });">
     Add Product A to Cart
   </button>
 
-  <button onclick="gtag('event', 'purchase', { item_name: 'Test Product A', value: 29.99 });">
+  <button onclick="gtag('event', 'purchase', { item_name: 'Test Product A', value: 29.99, debug_mode: true });">
     Purchase Product A
   </button>
 </body>
 </html>
+
