@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GA4 Sandbox Test</title>
+  <!-- Replace with your own GA4 MEASUREMENT ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSW1MY7HB4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-PSW1MY7HB4'); // Replace with your GA4 Measurement ID
+  </script>
+</head>
+<body>
+  <h1>My GA4 Test Store</h1>
+
+  <button onclick="gtag('event', 'view_item', { item_name: 'Test Product A' });">
+    View Product A
+  </button>
+
+  <button onclick="gtag('event', 'add_to_cart', { item_name: 'Test Product A' });">
+    Add Product A to Cart
+  </button>
+
+  <button onclick="gtag('event', 'purchase', { item_name: 'Test Product A', value: 29.99 });">
+    Purchase Product A
+  </button>
+</body>
+</html>
