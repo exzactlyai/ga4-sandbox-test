@@ -49,14 +49,23 @@
     }
 
     function firePurchase() {
+      const transactionId = 'PUR-' + Date.now() + '-' + Math.random().toString(36).substring(2, 8);
       gtag('event', 'purchase', {
-        transaction_id: 'PUR-' + Date.now(),
+        transaction_id: transactionId,
+        affiliation: 'Online Store',
         currency: 'GBP',
-        value: product.price,
-        items: [product],
+        value: product.price * product.quantity,
+        tax: 0,
+        shipping: 0,
+        items: [{
+          item_id: product.item_id,
+          item_name: product.item_name,
+          price: product.price,
+          quantity: product.quantity
+        }],
         debug_mode: true
       });
-      console.log('✅ purchase fired');
+      console.log('✅ purchase fired with transaction ID:', transactionId);
     }
   </script>
 
