@@ -13,12 +13,11 @@
 
     gtag('js', new Date());
 
-    // ✅ Enable debug mode so you can see events in DebugView
     gtag('config', 'G-M0EPL44E3Z', {
       debug_mode: true
     });
 
-    // ✅ Ecommerce Event Functions
+    // ✅ Product Definition
     const product = {
       item_id: 'console-test-1',
       item_name: 'Console Test Item',
@@ -26,9 +25,9 @@
       quantity: 1
     };
 
+    // ✅ Events
     function fireViewItem() {
       gtag('event', 'view_item', {
-        transaction_id: 'VIEW-' + Date.now(),
         currency: 'GBP',
         value: product.price,
         items: [product],
@@ -39,7 +38,6 @@
 
     function fireAddToCart() {
       gtag('event', 'add_to_cart', {
-        transaction_id: 'CART-' + Date.now(),
         currency: 'GBP',
         value: product.price,
         items: [product],
@@ -58,10 +56,10 @@
         tax: 0,
         shipping: 0,
         items: [{
-          item_id: product.item_id,
-          item_name: product.item_name,
-          price: product.price,
-          quantity: product.quantity
+          ...product,
+          item_brand: 'Generic',
+          item_category: 'Games',
+          item_category2: 'Consoles'
         }],
         debug_mode: true
       });
@@ -103,3 +101,4 @@
 
 </body>
 </html>
+
