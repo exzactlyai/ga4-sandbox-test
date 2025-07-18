@@ -3,13 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <title>GA4 Sandbox Test</title>
+
   <!-- GA4 Global Site Tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0EPL44E3Z"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
+    function gtag() { dataLayer.push(arguments); }
+
     gtag('js', new Date());
-    gtag('config', 'G-M0EPL44E3Z', { debug_mode: true });
+
+    // Enable debug mode globally
+    gtag('config', 'G-M0EPL44E3Z', {
+      debug_mode: true
+    });
   </script>
 </head>
 <body>
@@ -18,21 +24,27 @@
   <!-- VIEW ITEM -->
   <button onclick="
     gtag('event', 'view_item', {
-      item_id: 'test-product-a',
-      item_name: 'Test Product A',
-      price: 29.99,
-      debug_mode: true
+      currency: 'GBP',
+      value: 29.99,
+      items: [{
+        item_id: 'test-product-a',
+        item_name: 'Test Product A',
+        price: 29.99
+      }]
     });
   ">View Product A</button>
 
   <!-- ADD TO CART -->
   <button onclick="
     gtag('event', 'add_to_cart', {
-      item_id: 'test-product-a',
-      item_name: 'Test Product A',
-      price: 29.99,
-      quantity: 1,
-      debug_mode: true
+      currency: 'GBP',
+      value: 29.99,
+      items: [{
+        item_id: 'test-product-a',
+        item_name: 'Test Product A',
+        price: 29.99,
+        quantity: 1
+      }]
     });
   ">Add Product A to Cart</button>
 
@@ -40,13 +52,16 @@
   <button onclick="
     gtag('event', 'purchase', {
       transaction_id: 'T12345',
-      value: 29.99,
       currency: 'GBP',
-      item_id: 'test-product-a',
-      item_name: 'Test Product A',
-      price: 29.99,
-      quantity: 1,
-      debug_mode: true
+      value: 29.99,
+      tax: 0,
+      shipping: 0,
+      items: [{
+        item_id: 'test-product-a',
+        item_name: 'Test Product A',
+        price: 29.99,
+        quantity: 1
+      }]
     });
   ">Purchase Product A</button>
 </body>
