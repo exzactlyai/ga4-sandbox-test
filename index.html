@@ -18,13 +18,9 @@
   <!-- VIEW ITEM -->
   <button onclick="
     gtag('event', 'view_item', {
-      ecommerce: {
-        items: [{
-          item_id: 'test-product-a',
-          item_name: 'Test Product A',
-          price: 29.99
-        }]
-      },
+      item_id: 'test-product-a',
+      item_name: 'Test Product A',
+      price: 29.99,
       debug_mode: true
     });
   ">View Product A</button>
@@ -32,14 +28,10 @@
   <!-- ADD TO CART -->
   <button onclick="
     gtag('event', 'add_to_cart', {
-      ecommerce: {
-        items: [{
-          item_id: 'test-product-a',
-          item_name: 'Test Product A',
-          price: 29.99,
-          quantity: 1
-        }]
-      },
+      item_id: 'test-product-a',
+      item_name: 'Test Product A',
+      price: 29.99,
+      quantity: 1,
       debug_mode: true
     });
   ">Add Product A to Cart</button>
@@ -47,22 +39,15 @@
   <!-- PURCHASE -->
   <button onclick="
     gtag('event', 'purchase', {
-      ecommerce: {
-        transaction_id: 'T12345',
-        value: 29.99,
-        currency: 'GBP',
-        items: [{
-          item_id: 'test-product-a',
-          item_name: 'Test Product A',
-          price: 29.99,
-          quantity: 1
-        }]
-      },
+      transaction_id: 'T12345',
+      value: 29.99,
+      currency: 'GBP',
+      item_id: 'test-product-a',
+      item_name: 'Test Product A',
+      price: 29.99,
+      quantity: 1,
       debug_mode: true
     });
   ">Purchase Product A</button>
 </body>
 </html>
-
-
-
