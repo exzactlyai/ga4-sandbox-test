@@ -7,7 +7,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0EPL44E3Z"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-M0EPL44E3Z', { debug_mode: true });
   </script>
@@ -15,30 +15,54 @@
 <body>
   <h1>My GA4 Test Store</h1>
 
+  <!-- VIEW ITEM -->
   <button onclick="
     gtag('event', 'view_item', {
-      items: [{ item_id: 'test-product-a', item_name: 'Test Product A', price: 29.99 }],
+      ecommerce: {
+        items: [{
+          item_id: 'test-product-a',
+          item_name: 'Test Product A',
+          price: 29.99
+        }]
+      },
       debug_mode: true
     });
   ">View Product A</button>
 
+  <!-- ADD TO CART -->
   <button onclick="
     gtag('event', 'add_to_cart', {
-      items: [{ item_id: 'test-product-a', item_name: 'Test Product A', price: 29.99, quantity: 1 }],
+      ecommerce: {
+        items: [{
+          item_id: 'test-product-a',
+          item_name: 'Test Product A',
+          price: 29.99,
+          quantity: 1
+        }]
+      },
       debug_mode: true
     });
   ">Add Product A to Cart</button>
 
+  <!-- PURCHASE -->
   <button onclick="
     gtag('event', 'purchase', {
-      transaction_id: 'T12345',
-      value: 29.99,
-      currency: 'GBP',
-      items: [{ item_id: 'test-product-a', item_name: 'Test Product A', price: 29.99, quantity: 1 }],
+      ecommerce: {
+        transaction_id: 'T12345',
+        value: 29.99,
+        currency: 'GBP',
+        items: [{
+          item_id: 'test-product-a',
+          item_name: 'Test Product A',
+          price: 29.99,
+          quantity: 1
+        }]
+      },
       debug_mode: true
     });
   ">Purchase Product A</button>
 </body>
 </html>
+
 
 
