@@ -1,58 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>GA4 Sandbox Test</title>
-  <!-- GA4 Global Site Tag -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0EPL44E3Z"></script>
+  <title>GA4 Purchase Test</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', 'G-M0EPL44E3Z', { debug_mode: true });
+    gtag('config', 'G-XXXXXXXXXX', { debug_mode: true });
   </script>
 </head>
 <body>
-  <h1>My GA4 Test Store</h1>
-
-  <!-- VIEW ITEM -->
-  <button onclick="
-    gtag('event', 'view_item', {
-      currency: 'GBP',
-      items: [{
-        item_id: 'test-product-a',
-        item_name: 'Test Product A',
-        price: 29.99
-      }]
-    });
-  ">View Product A</button>
-
-  <!-- ADD TO CART -->
-  <button onclick="
-    gtag('event', 'add_to_cart', {
-      currency: 'GBP',
-      items: [{
-        item_id: 'test-product-a',
-        item_name: 'Test Product A',
-        price: 29.99,
-        quantity: 1
-      }]
-    });
-  ">Add Product A to Cart</button>
-
-  <!-- PURCHASE -->
-  <button onclick="
-    gtag('event', 'purchase', {
-      transaction_id: 'T12345',
-      value: 29.99,
-      currency: 'GBP',
-      items: [{
-        item_id: 'test-product-a',
-        item_name: 'Test Product A',
-        price: 29.99,
-        quantity: 1
-      }]
-    });
-  ">Purchase Product A</button>
+  <button onclick="gtag('event', 'purchase', {
+    transaction_id: '123456789',
+    value: 19.99,
+    currency: 'GBP',
+    items: [{
+      item_id: 'sku123',
+      item_name: 'Test Product',
+      price: 19.99,
+      quantity: 1
+    }]
+  });">Trigger Purchase</button>
 </body>
 </html>
