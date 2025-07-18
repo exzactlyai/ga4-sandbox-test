@@ -19,12 +19,10 @@
   <button onclick="
     gtag('event', 'view_item', {
       currency: 'GBP',
-      value: 29.99,
       items: [{
         item_id: 'test-product-a',
         item_name: 'Test Product A',
-        price: 29.99,
-        quantity: 1
+        price: 29.99
       }]
     });
   ">View Product A</button>
@@ -33,7 +31,6 @@
   <button onclick="
     gtag('event', 'add_to_cart', {
       currency: 'GBP',
-      value: 29.99,
       items: [{
         item_id: 'test-product-a',
         item_name: 'Test Product A',
@@ -47,8 +44,8 @@
   <button onclick="
     gtag('event', 'purchase', {
       transaction_id: 'T12345',
-      currency: 'GBP',
       value: 29.99,
+      currency: 'GBP',
       items: [{
         item_id: 'test-product-a',
         item_name: 'Test Product A',
